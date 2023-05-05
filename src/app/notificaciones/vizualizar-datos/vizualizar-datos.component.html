@@ -1,0 +1,17 @@
+<div class="cabecera">
+    <h1>TUS RESULTADOS {{datosGetLocal.name | uppercase}}</h1>
+</div>
+<div style="width: 100%; display: flex; align-items: center; flex-direction: column; margin-bottom: 5%;">
+
+    <div class="partidos" *ngFor="let item of data" [ngClass]="item.seleccionado != 1 ? 'color2' : 'color1'">
+        <div>
+            <h2>Numero de partido - {{item.idPartido}} </h2>
+        </div>
+        <div *ngIf="item.seleccionado == 1">
+            <h2> PARTIDO EMPATADO</h2>
+        </div>
+        <div *ngIf="item.seleccionado != 1" class="seleccion">
+            <h2>Equipo Seleccionado - {{item.team}} </h2><img src="{{item.logo}}" alt="" width="40px">
+        </div>
+    </div>
+</div>

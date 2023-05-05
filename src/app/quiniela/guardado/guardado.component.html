@@ -1,0 +1,33 @@
+<div class="container">
+    <div *ngFor="let item of partidosResult" class="div-principal">
+        <h1>{{item.league.round}} - {{item.fixture.id}}</h1>
+        <div class="div-engloba-equipos">
+            <div class="teams">
+                <h2> {{item.teams.home.name}}</h2>
+                <img src="{{item.teams.home.logo}}" alt="" width="50px">
+                <mat-radio-button [value]="item.teams.home.id"
+                    (change)="radioChange($event,item.fixture.id,item.teams.home.logo,item.teams.home.name)">
+                    <span *ngIf="selec == item.teams.home.id">Gana</span>
+                    <span *ngIf="selec != item.teams.home.id">Pierde</span>
+                </mat-radio-button>
+            </div>
+            <mat-radio-button [value]="1" (change)="radioChange($event, item.fixture.id, null, null)"><span>
+                    Empate
+                </span></mat-radio-button>
+            <div class="teams">
+                <h2>{{item.teams.away.name}}</h2>
+                <img src="{{item.teams.away.logo}}" alt="" width="50px">
+                <mat-radio-button [value]="item.teams.away.id"
+                    (change)="radioChange($event,item.fixture.id,item.teams.away.logo,item.teams.away.name)">
+                    <span *ngIf="selec == item.teams.away.id">Gana</span>
+                    <span *ngIf="selec != item.teams.away.id">Pierde</span>
+                </mat-radio-button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="btn">
+    <button mat-raised-button color="primary" (click)="guardar()" [disabled]="btnHabilida">Guardar quiniela</button>
+    <button mat-raised-button color="primary" (click)="openDialog()">obtener quiniela</button>
+    <button mat-raised-button color="primary" (click)="borrarValor()">borrar quiniela</button>
+</div>

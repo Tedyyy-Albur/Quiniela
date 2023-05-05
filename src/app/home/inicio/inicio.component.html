@@ -1,0 +1,18 @@
+<h1>BIENVENIDOS</h1>
+<div class="container">
+  <div *ngFor="let item of partidosResult" class="div-principal">
+    <h1>{{item.league.round}}</h1>
+    <div class="div-engloba-equipos">
+      <div class="teams">
+        <h2> {{item.teams.home.name}}</h2>
+        <img src="{{item.teams.home.logo}}" alt="" width="50px">
+        <span></span>
+      </div>
+      <div class="teams">
+        <h2>{{item.teams.away.name}}</h2>
+        <img src="{{item.teams.away.logo}}" alt="" width="50px">
+      </div>
+    </div>
+    
+  </div>
+</div>

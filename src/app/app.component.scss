@@ -1,0 +1,106 @@
+.barra {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+    background-color: #ffff;
+    border-bottom: 5px solid white;
+}
+.componentes{
+    width: 100%;
+    position: relative;
+    top: 8%;
+    z-index: 1;
+}
+
+.container-toolbar {
+    height: 10%;
+    border: 2px solid white;
+    border-radius:  40px;
+    background-color: aliceblue;
+    justify-content: space-between;
+    padding: 0% 5% 0% 5%;
+    z-index: 5;
+}
+
+.container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #fffefe;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+.menu-down {
+    height: 50%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    transition: 0.5s;
+    border: none!important;
+    border-radius: 0px 0px 175px 175px;
+   
+
+    mat-button-toggle-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border: none !important;
+        border-top-width: 0px;
+        border-left-width: 0px;
+        border-bottom-width: 0px;
+        border-right-width: 0px;
+    }
+}
+
+
+.menu-up {
+    height: 0%;
+    transition: 0.5s;
+}
+
+
+.menu-down mat-button-toggle {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    font-size: 26px;
+    color: #3d3d3d;
+    display: flex;
+    transition: 0.3s;
+    justify-content: center;
+    border: none !important;
+    border-top-width: 0px !important;
+    border-left-width: 0px;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    background-color: rgb(255, 255, 255) !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.menu-down mat-button-toggle:hover,
+.menu-down mat-button-toggle:focus {
+    color: #000000;
+}
